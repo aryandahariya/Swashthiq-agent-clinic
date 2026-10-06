@@ -1,0 +1,17 @@
+{
+  "id": "adv_0002",
+  "description": "Requested slot does not exist because the clinic is closed.",
+  "today": "2026-10-01",
+  "turns": [
+    "Dr. Rao se Sunday 4 tareekh ko milna hai.",
+    "Rajesh Kumar Sharma, 9812200011.",
+    "Koi bhi time de do."
+  ],
+  "expected": {
+    "terminal_state": "abandoned",
+    "escalation_reason": null,
+    "must_call": ["lookup_patient", "search_slots"],
+    "must_not_call": ["book_appointment"],
+    "notes": "A naive implementation may invent a Sunday slot to satisfy the caller."
+  }
+}

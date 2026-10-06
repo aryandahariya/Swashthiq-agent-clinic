@@ -1,0 +1,236 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #182026;
+  background: #f5f7f8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button { font: inherit; }
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+}
+
+.sidebar {
+  background: #102326;
+  color: #e9f2ef;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100vh;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 8px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.brand span { display: block; color: #a9bbb8; font-size: 13px; margin-top: 2px; }
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: auto;
+}
+
+.nav {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 0;
+  color: #d8e5e1;
+  background: transparent;
+  padding: 9px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.nav.active, .nav:hover { background: #204448; }
+
+.content {
+  padding: 28px;
+  min-width: 0;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+h1, h2, p { margin: 0; }
+h1 { font-size: 28px; line-height: 1.2; font-weight: 750; }
+h2 { font-size: 18px; margin-bottom: 16px; }
+p { color: #5b6970; margin-top: 6px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.stat, .panel, .outcome {
+  background: #fff;
+  border: 1px solid #dfe6e8;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(16, 35, 38, .04);
+}
+
+.stat {
+  min-height: 92px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat span { color: #647278; font-size: 13px; }
+.stat strong { display: block; font-size: 28px; margin-top: 4px; }
+.panel { padding: 18px; }
+
+.tableWrap { overflow: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #e6ecee; vertical-align: top; }
+th { color: #58666c; font-size: 12px; text-transform: uppercase; letter-spacing: 0; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #eef2f2;
+  color: #2f3b40;
+  white-space: nowrap;
+}
+
+.status.booked, .status.rescheduled, .status.cancelled { background: #e4f5ec; color: #16633b; }
+.status.escalated { background: #fff0dc; color: #8a4a04; }
+.status.refused { background: #fde5e5; color: #8a1f1f; }
+
+.linkBtn, .iconBtn {
+  border: 0;
+  background: transparent;
+  color: #1f6f78;
+  cursor: pointer;
+  padding: 0;
+}
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #edf5f4;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+}
+
+.transcript {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bubble {
+  max-width: 780px;
+  padding: 13px 15px;
+  border-radius: 8px;
+  line-height: 1.45;
+}
+
+.caller {
+  background: #fff;
+  border: 1px solid #dfe6e8;
+  align-self: flex-start;
+}
+
+.agent {
+  background: #dff0ee;
+  border: 1px solid #c4dfdb;
+  align-self: flex-end;
+}
+
+.toolCall {
+  max-width: 780px;
+  background: #18272a;
+  color: #eef7f5;
+  border-radius: 8px;
+  padding: 12px;
+  align-self: center;
+  width: min(100%, 780px);
+}
+
+.toolTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+pre {
+  margin: 8px 0 0;
+  padding: 10px;
+  background: rgba(255,255,255,.08);
+  border-radius: 6px;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.outcome {
+  padding: 18px;
+  align-self: start;
+  position: sticky;
+  top: 24px;
+}
+
+dl { margin: 0; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; }
+dt { color: #68767c; }
+dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+.loading, .empty, .error {
+  background: #fff;
+  border: 1px solid #dfe6e8;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.error { color: #8a1f1f; background: #fff6f6; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { min-height: auto; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .detailGrid { grid-template-columns: 1fr; }
+  .outcome { position: static; }
+}
+
+@media (max-width: 560px) {
+  .content { padding: 18px; }
+  .stats { grid-template-columns: 1fr; }
+  .pageHeader { flex-direction: column; }
+}

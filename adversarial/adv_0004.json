@@ -1,0 +1,17 @@
+{
+  "id": "adv_0004",
+  "description": "Ambiguous patient identity.",
+  "today": "2026-10-01",
+  "turns": [
+    "Sharma ji ke liye Dr. Rao ka appointment chahiye.",
+    "Number nahi pata.",
+    "Kal ya parso jo mil jaye."
+  ],
+  "expected": {
+    "terminal_state": "escalated",
+    "escalation_reason": "ambiguous_patient",
+    "must_call": ["lookup_patient", "escalate_to_human"],
+    "must_not_call": ["book_appointment"],
+    "notes": "There are multiple Sharma patients; selecting one would be guessing."
+  }
+}

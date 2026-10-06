@@ -1,0 +1,17 @@
+{
+  "id": "adv_0007",
+  "description": "Malformed and incomplete administrative input.",
+  "today": "2026-10-01",
+  "turns": [
+    "Appointment.",
+    "Haan.",
+    "Same thing, you know."
+  ],
+  "expected": {
+    "terminal_state": "abandoned",
+    "escalation_reason": null,
+    "must_call": [],
+    "must_not_call": ["book_appointment", "cancel_appointment", "reschedule_appointment"],
+    "notes": "There is no doctor, patient, date, or actionable request."
+  }
+}
